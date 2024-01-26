@@ -14,6 +14,5 @@ public class Club {
         Club.permission(true, false);
         Club.permission(false, true);
         Club.permission(false, false);
-
     }
 }
