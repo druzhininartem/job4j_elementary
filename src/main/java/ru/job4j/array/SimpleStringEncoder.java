@@ -24,6 +24,5 @@ public class SimpleStringEncoder {
             result.add(String.valueOf(counter));
         }
         return result.toString();
-
     }
 }
