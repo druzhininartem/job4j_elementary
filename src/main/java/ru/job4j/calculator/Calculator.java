@@ -12,11 +12,22 @@ public class Calculator {
         System.out.println(result);
     }
 
-    public static void main(String[] args) {
-       plus(1, 2);
-       plus(10, 11);
-       minus(7, 3);
-       minus(2, 6);
+    public double add(double first, double second) {
+        return first + second;
     }
 
+    public double add(double first, double second, double third) {
+        return add(first, add(second, third));
+    }
+
+    public static void main(String[] args) {
+        plus(1, 2);
+        plus(10, 11);
+        minus(7, 3);
+        minus(2, 6);
+
+        Calculator sum = new Calculator();
+        double result = sum.add(10, 20, 30);
+        System.out.println(result);
+    }
 }
