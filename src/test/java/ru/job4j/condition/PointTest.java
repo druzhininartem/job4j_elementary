@@ -1,6 +1,7 @@
 package ru.job4j.condition;
 
 import org.junit.jupiter.api.Test;
+
 import static org.assertj.core.api.Assertions.*;
 
 class PointTest {
@@ -40,4 +41,32 @@ class PointTest {
         double expected = 4.24;
         assertThat(result).isEqualTo(expected, withPrecision(0.01));
     }
+
+    @Test
+    void when000to222then3Dot46() {
+        Point a = new Point(0, 0, 0);
+        Point b = new Point(2, 2, 2);
+        double result = a.distance3d(b);
+        double expected = 3.46;
+        assertThat(result).isEqualTo(expected, withPrecision(0.01));
+    }
+
+    @Test
+    void when123to456then5Dot2() {
+        Point a = new Point(1, 2, 3);
+        Point b = new Point(4, 5, 6);
+        double result = a.distance3d(b);
+        double expected = 5.2;
+        assertThat(result).isEqualTo(expected, withPrecision(0.01));
+    }
+
+    @Test
+    void whenMinus1Minus2Minus3to1Minus1Minus1then3() {
+        Point a = new Point(-1, -2, -3);
+        Point b = new Point(1, -1, -1);
+        double result = a.distance3d(b);
+        double expected = 3;
+        assertThat(result).isEqualTo(expected, withPrecision(0.01));
+    }
+
 }
